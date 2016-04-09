@@ -39,6 +39,7 @@ NASIP = "113.105.243.254"
 
 在 OpenWrt 环境下，如果没有安装 Python，可按照以下命令安装：  
 （如果你需要路由器，可以在网上购买一些“硬改”过的二手路由器，搜索关键词为 “二手路由器 硬改 OpenWrt”，推荐 `TP-LINK TL-WR740N`，售价大约是 35 元。） 
+
 Barrier Breaker 14.07：
 ```bash
 opkg update
