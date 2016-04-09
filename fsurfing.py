@@ -38,7 +38,18 @@ ISOTIMEFORMAT='%Y-%m-%d %X'
 def get_ip_address():
     if platform.system() == "Windows":
         import socket
-        return socket.gethostbyname(socket.gethostname())
+        ipList = socket.gethostbyname_ex(socket.gethostname())
+        j = 0
+        print "Index | IP"
+        for i in ipList[2]:
+            print j, "     ",i
+            j = j + 1
+        index = int(raw_input("Please input the index number of you IP address.(Usually, the IP looks like 10.xxx.xxx.xxx):\n"))
+        if index >= 0 and index < len(ipList[2]):
+            return ipList[2][index]
+        else:
+            print "Invalid Index number"
+            exit()
     ip=os.popen(". /lib/functions/network.sh; network_get_ipaddr ip wan; echo $ip").read()
     ip2=str(ip).split("\n")[0]
     return ip2
@@ -46,7 +57,6 @@ def get_ip_address():
 IP = get_ip_address()
 
 def get_mac_address():
-
     if platform.system() == "Windows":
         import uuid
         mac=uuid.UUID(int = uuid.getnode()).hex[-12:] 
