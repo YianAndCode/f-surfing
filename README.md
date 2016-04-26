@@ -21,7 +21,7 @@ GDCTSCP：https://github.com/GDCTSCP/GDCTSCP
 
 ### 配置
 
-首先修改 `fsurfing.ph` 中的账号密码：
+首先修改 `fsurfing.py` 中的账号密码：
 ```python
 # 学号
 USERNAME = "StudentID"
