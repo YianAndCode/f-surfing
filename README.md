@@ -48,12 +48,16 @@ opkg install python-mini
 Chaos Calmer 15.05：
 ```bash
 opkg update
-# 如果你的闪存只有 8MB，建议安装 python-base，大约 1MB
+# 如果你的闪存只有 8MB，可以安装 python-base，然后再手动添加所缺的库，大约 1MB
 opkg install python-base
+
 # 如果你的闪存大于 16MB，可以安装 python-light，大约 7.5MB
 opkg install python-light
+
+# 或者你可以只安装必须的包，约 3MB，推荐使用此方法
+opkg install python-base python-codecs python-logging python-openssl
 ```
-如果你安装的是 `mini` 版或者是 `light` 版，可能会缺少一些库，可以使用 `check-dependence.py` 来进行检测，然后把缺少的库手动复制上去。
+如果你安装的是 `mini` 版或者是 `base` 版，可能会缺少一些库，可以使用 `check-dependence.py` 来进行检测，然后把缺少的库手动复制上去。
 
 
 ## 开源协议
