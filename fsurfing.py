@@ -20,7 +20,7 @@ NASIP = "113.105.243.254"
 
 
 # iswifi, the default value is 1050, I don't know what it mean
-#         another values: 4060, 4070
+#         other values: 4060, 4070
 ISWIFI = "1050"
 
 BASEURL = "http://enet.10000.gd.cn:10001/client/"
@@ -186,12 +186,13 @@ def login():
             elif code == "11064000":
                 print formattime(), "User had been blocked"
                 exit();
+        time.sleep(5)
     return result
     
 def main():
-    for i  in range(0, 5):
+    while True:
         try:
-            while True:
+            for i  in range(0, 5):
                 tester = urllib2.urlopen(CHECKINTERNETURL)
                 if(tester.geturl() == CHECKINTERNETURL):
                     result = heartbeat()
@@ -206,6 +207,7 @@ def main():
                             exit()
                 print formattime(), "Loging..."
                 login()
+                sleep(5)
             
             time.sleep(60)
             keep_heartbeat()
