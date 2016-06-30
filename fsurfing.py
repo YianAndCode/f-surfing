@@ -164,7 +164,7 @@ def keep_heartbeat():
             code = result.split('\"')[3]
             print formattime(), "The code is:", code
             if code == "0":
-                time.sleep(120)
+                time.sleep(60)
                 continue
             elif code == "1":
                 login()
